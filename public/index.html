@@ -2,9 +2,33 @@
 <html>
 <head>
 	<title>Local Webserver</title>
+	<script src="script.js"></script>
+	<link rel="stylesheet" href="style.css">
 </head>
 
-<body>
-	<p>Hello World :)</p>
+<body onload="pageLoaded()">
+	<form id="formm" autocomplete="off">
+		<label for="address1">IP Address:</label>
+		<br>
+		<input type="number" class="address-octet" id="address1" min="0" max="255" placeholder="000">.
+		<input type="number" class="address-octet" id="address2" min="0" max="255" placeholder="000">.
+		<input type="number" class="address-octet" id="address3" min="0" max="255" placeholder="000">.
+		<input type="number" class="address-octet" id="address4" min="0" max="255" placeholder="000">
+	
+		<br><br>
+		
+		<label for="subnet1">Subnet Mask:</label>
+		<br>
+		<input type="number" class="address-octet" id="subnet1" min="0" max="255" placeholder="000">.
+		<input type="number" class="address-octet" id="subnet2" min="0" max="255" placeholder="000">.
+		<input type="number" class="address-octet" id="subnet3" min="0" max="255" placeholder="000">.
+		<input type="number" class="address-octet" id="subnet4" min="0" max="255" placeholder="000">
+	</form>
+
+	<br><br><br><br>
+	<button id="submit-button" onclick="doCalculations()">Calculate</button>
+
+	<br><br><br>
+	<div id="results-display"></div>
 </body>
 </html>
